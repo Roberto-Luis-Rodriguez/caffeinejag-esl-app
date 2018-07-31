@@ -33,6 +33,8 @@ group :development, :test do
   gem 'sqlite3', '1.3.13'
 end
 
+
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -40,6 +42,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'rails-controller-testing', '1.0.2'
+  gem 'minitest-reporters',       '1.1.14'
+  gem 'guard',                    '2.14.1'
+  gem 'guard-minitest',           '2.4.6'
 end
 
 group :production do
