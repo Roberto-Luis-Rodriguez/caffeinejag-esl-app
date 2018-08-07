@@ -63,5 +63,5 @@ require 'rails_helper'
     subject.password = subject.password_confirmation = "a" * 5
     expect(subject).to_not be_valid
   end
-  
+
 end
