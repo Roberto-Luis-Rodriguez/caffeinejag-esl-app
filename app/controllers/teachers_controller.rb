@@ -9,8 +9,9 @@ class TeachersController < ApplicationController
   end
 
   def create
-    @teacher = Teacher.new(teacher_params)    # Not the final implementation!
+    @teacher = Teacher.new(teacher_params)
     if @teacher.save
+      sign_in @teacher
       flash[:success] = "Welcome to the CaffeineJag Esl App!"
       redirect_to @teacher
     else

@@ -1,12 +1,17 @@
 require 'rails_helper'
 
+feature 'Spec for Sign Up',  %{As a teacher
+# I want to create an account
+# So that I can upload lesson plans,
+flashcards, videos and worksheets
+} do
+
 # Acceptance Criteria
 # I must specify a valid email address
 # I must specify a password and confirm that password
 # If I don't peform the above, I get an error message
 # If I specify valid informnation, I register my account and am authenticated
 
-describe "Spec for Sign Up" do
 scenario "teacher successfully creates an account" do
 	visit sign_up_path
   name = "Anthing"

@@ -1,2 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/
 # FixtureSet.html
+
+roberto:
+  name: Roberto Luis Rodriguez
+  email: robertorodriguezjr86@gmail.com
+  password_digest: <%= Teacher.digest('password') %>
+  # admin: true
+  # activated: true
+  # activated_at: <%= Time.zone.now %>
