@@ -1,9 +1,8 @@
 <header class="navbar navbar-inverse">
   <div class="container">
-    <%= link_to "caffeinejag esl app", '#', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path, class: "btn btn-lg btn-primary" %></li>
+        <li><%= link_to "Home", root_path, class: "btn btn-lg btn-secondary" %></li>
         <% if signed_in? %>
           <li><%= link_to "Teachers", '#' %></li>
           <li class="dropdown">
@@ -20,26 +19,10 @@
            </ul>
          </li>
         <% else %>
-         <li><%= link_to "Sign in", sign_in_path, class: "btn btn-lg btn-primary" %></li>
+         <li><%= link_to "Sign in", sign_in_path, class: "btn btn-lg btn-secondary" %></li>
         <% end %>
-        <li><%= link_to "Sign up", sign_up_path, class: "btn btn-lg btn-primary" %></li>
+        <li><%= link_to "Sign up", sign_up_path, class: "btn btn-lg btn-secondary" %></li>
       </ul>
     </nav>
   </div>
 </header>
-
-
-<!-- previous code below -->
-<!-- <header class="navbar navbar-fixed-top navbar-inverse"> -->
-<!-- <header class="navbar navbar-inverse">
-  <div class="container">
-    <%= link_to "caffeinejag esl app", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path, class: "btn btn-lg btn-primary" %></li>
-        <li><%= link_to "Sign in", sign_in_path, class: "btn btn-lg btn-primary" %></li>
-        <li><%= link_to "Sign up", sign_up_path, class: "btn btn-lg btn-primary" %></li>
-      </ul>
-    </nav>
-  </div>
-</header> -->
