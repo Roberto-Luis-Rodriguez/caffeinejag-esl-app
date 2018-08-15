@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    def new
+  def new
 
   end
 
@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
      redirect_to teacher
    else
      # Create an error message.
-     flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+     flash[:danger] = 'Invalid email/password combination'
+     render 'new'
     end
   end
 

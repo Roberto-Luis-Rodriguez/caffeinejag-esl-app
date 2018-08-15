@@ -11,9 +11,6 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
       <%= f.submit "Sign in", class: "btn btn-primary" %>
       <% end %>
       <p>New user? <%= link_to "Sign up now!", sign_up_path %></p>

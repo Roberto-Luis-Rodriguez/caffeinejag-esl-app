@@ -2,6 +2,7 @@
 # FixtureSet.html
 
 roberto:
+  id: 1
   name: Roberto Luis Rodriguez
   email: robertorodriguezjr86@gmail.com
   password_digest: <%= Teacher.digest('password') %>
