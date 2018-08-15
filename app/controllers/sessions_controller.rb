@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-
   end
 
   def create
@@ -10,6 +9,7 @@ class SessionsController < ApplicationController
      # Log the user in and redirect to the user's show page.
      sign_in teacher
      redirect_to teacher
+     flash[:success] = "Welcome back to the CaffeineJag Esl App!"
    else
      # Create an error message.
      flash[:danger] = 'Invalid email/password combination'
