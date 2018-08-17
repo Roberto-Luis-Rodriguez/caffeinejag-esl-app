@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature 'Spec for Sign Up',  %{As a teacher
-# I want to create an account
-# So that I can upload lesson plans,
+I want to create an account
+So that I can upload lesson plans,
 flashcards, videos and worksheets
 } do
 

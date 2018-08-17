@@ -2,7 +2,7 @@
 
 feature 'Spec for Sign in', %q(
 As an unauthenticated teacher
-I want to sign in
+I want to sign in to my account
 So that I can see, upload and/or
 delete my lesson plans,
 flashcards, videos and worksheets

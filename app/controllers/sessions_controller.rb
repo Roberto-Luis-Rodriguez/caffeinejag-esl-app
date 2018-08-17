@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
    if teacher && teacher.authenticate(params[:session][:password])
      # Log the user in and redirect to the user's show page.
      sign_in teacher
+     remember teacher
      redirect_to teacher
      flash[:success] = "Welcome back to the CaffeineJag Esl App!"
    else
@@ -18,7 +19,7 @@ class SessionsController < ApplicationController
   end
 
     def destroy
-    sign_out
+    sign_out if signed_in?
     redirect_to root_url
   end
 end
