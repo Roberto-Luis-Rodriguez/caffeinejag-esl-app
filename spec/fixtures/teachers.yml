@@ -6,6 +6,6 @@ roberto:
   name: Roberto Luis Rodriguez
   email: robertorodriguezjr86@gmail.com
   password_digest: <%= Teacher.digest('password') %>
-  # admin: true
-  # activated: true
-  # activated_at: <%= Time.zone.now %>
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>

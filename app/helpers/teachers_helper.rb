@@ -1,5 +1,5 @@
 module TeachersHelper
-  # Returns the Gravatar for the given user.
+  # Returns the Gravatar for the given teacher.
    def gravatar_for(teacher, options = { size: 80 })
      gravatar_id = Digest::MD5::hexdigest(teacher.email.downcase)
      size = options[:size]
@@ -9,7 +9,7 @@ module TeachersHelper
  end
 
  # module TeachersHelper
- #   # Returns the Gravatar for the given user.
+ #   # Returns the Gravatar for the given teacher.
  #    def gravatar_for(teacher, size: 20)
  #      gravatar_id = Digest::MD5::hexdigest(teacher.email.downcase)
  #      gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
@@ -18,7 +18,7 @@ module TeachersHelper
  #  end
 
  # module TeachersHelper
- #   # Returns the Gravatar for the given user.
+ #   # Returns the Gravatar for the given teacher.
  #    def gravatar_for(teacher)
  #      gravatar_id = Digest::MD5::hexdigest(teacher.email.downcase)
  #      gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
