@@ -10,7 +10,9 @@ Teacher.create!(name:  "Roberto Luis Rodriguez",
                 email: "robertorodriguezjr86@gmail.com",
                 password:              "starwars77",
                 password_confirmation: "starwars77",
-                admin: true)
+                admin: true,
+                activated: true,
+                activated_at: Time.zone.now)
 
 99.times do |n|
   name  = Faker::Name.name
@@ -19,5 +21,7 @@ Teacher.create!(name:  "Roberto Luis Rodriguez",
   Teacher.create!(name:  name,
                email: email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
 end

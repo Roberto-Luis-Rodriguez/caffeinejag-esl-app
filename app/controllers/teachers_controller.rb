@@ -4,12 +4,12 @@ class TeachersController < ApplicationController
   before_action :admin_teacher,     only: :destroy
 
   def index
-    # @teachers = Teacher.all
-    @teachers = Teacher.paginate(page: params[:page])
+    @teachers = Teacher.where(activated: FILL_IN).paginate(page: params[:page])
   end
 
   def show
     @teacher = Teacher.find(params[:id])
+    redirect_to root_url and return unless FILL_IN
   end
 
   def new
@@ -19,9 +19,9 @@ class TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(teacher_params)
     if @teacher.save
-      sign_in @teacher
-      flash[:success] = "Welcome to the CaffeineJag Esl App!"
-      redirect_to @teacher
+      @teacher.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
     render 'new'
   end

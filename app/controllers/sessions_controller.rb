@@ -6,13 +6,17 @@ class SessionsController < ApplicationController
   def create
    teacher = Teacher.find_by(email: params[:session][:email].downcase)
    if teacher && teacher.authenticate(params[:session][:password])
-     # Log the user in and redirect to the user's show page.
-     sign_in teacher
-     params[:session][:remember_me] == '1' ? remember(teacher) : forget(teacher)
-     redirect_back_or teacher
-     flash[:success] = "Welcome back to the CaffeineJag Esl App!"
+     if teacher.activated?
+        sign_in teacher
+        params[:session][:remember_me] == '1' ? remember(teacher) : forget(teacher)
+        redirect_back_or teacher
+      else
+        message  = "Account not activated. "
+        message += "Check your email for the activation link."
+        flash[:warning] = message
+        redirect_to root_url
+      end
    else
-     # Create an error message.
      flash[:danger] = 'Invalid email/password combination'
      render 'new'
     end
@@ -24,7 +28,6 @@ class SessionsController < ApplicationController
   end
 end
 
-
 # class SessionsController < ApplicationController
 #
 #   def new
@@ -35,10 +38,9 @@ end
 #    if teacher && teacher.authenticate(params[:session][:password])
 #      # Log the user in and redirect to the user's show page.
 #      sign_in teacher
-#      remember teacher
-#      redirect_to teacher
-#      flash[:success] = "Welcome back to the CaffeineJag Esl App!"
+#      params[:session][:remember_me] == '1' ? remember(teacher) : forget(teacher)
 #      redirect_back_or teacher
+#      flash[:success] = "Welcome back to the CaffeineJag Esl App!"
 #    else
 #      # Create an error message.
 #      flash[:danger] = 'Invalid email/password combination'
