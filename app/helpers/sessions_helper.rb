@@ -23,7 +23,7 @@ module SessionsHelper
      @current_teacher ||= Teacher.find_by(id: teacher_id)
    elsif (teacher_id = cookies.signed[:teacher_id])
      teacher = Teacher.find_by(id: teacher_id)
-     if teacher && teacher.authenticated?(cookies[:remember_token])
+     if teacher && teacher.authenticated?(:remember, cookies[:remember_token])
        sign_in teacher
        @current_teacher = teacher
     end

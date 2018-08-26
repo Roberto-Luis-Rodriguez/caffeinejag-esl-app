@@ -1,0 +1,10 @@
+<h1>CaffeineJag ESL App</h1>
+
+<p>Hi <%= @teacher.name %>,</p>
+
+<p>
+Welcome to the CaffeineJag ESL App! Click on the link below to activate your account:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@teacher.activation_token,
+                                                    email: @teacher.email) %>
