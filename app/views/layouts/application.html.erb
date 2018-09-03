@@ -7,6 +7,7 @@
                                               'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,b">
   </head>
   <body>
     <h1 class="site-title">CaffeineJag ESL</h1>
@@ -16,6 +17,7 @@
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= yield %>
+      <%= render 'layouts/body' %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>

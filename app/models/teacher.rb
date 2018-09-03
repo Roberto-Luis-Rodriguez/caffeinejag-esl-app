@@ -46,7 +46,7 @@ class Teacher < ApplicationRecord
 
     # Activates an account.
     def activate
-      update_columns(activated: FILL_IN, activated_at: FILL_IN)
+      update_columns(activated: true, activated_at: Time.zone.now)
     end
 
     # Sends activation email.

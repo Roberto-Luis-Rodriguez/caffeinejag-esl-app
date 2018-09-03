@@ -4,12 +4,12 @@ class TeachersController < ApplicationController
   before_action :admin_teacher,     only: :destroy
 
   def index
-    @teachers = Teacher.where(activated: FILL_IN).paginate(page: params[:page])
+    @teachers = Teacher.where(activated: true).paginate(page: params[:page])
   end
 
   def show
     @teacher = Teacher.find(params[:id])
-    redirect_to root_url and return unless FILL_IN
+    redirect_to root_url and return unless true
   end
 
   def new
