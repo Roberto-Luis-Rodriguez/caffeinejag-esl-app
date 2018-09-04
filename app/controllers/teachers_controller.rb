@@ -4,7 +4,7 @@ class TeachersController < ApplicationController
   before_action :admin_teacher,     only: :destroy
 
   def index
-    @teachers = Teacher.where(activated:, true).paginate(page: params[:page])
+    @teachers = Teacher.where(activated: true).paginate(page: params[:page])
   end
 
   def show
