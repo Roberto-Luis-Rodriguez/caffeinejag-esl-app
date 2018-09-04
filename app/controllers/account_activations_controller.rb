@@ -1,4 +1,5 @@
 class AccountActivationsController < ApplicationController
+
    def edit
     teacher = Teacher.find_by(email: params[:email])
     if teacher && !teacher.activated? && teacher.authenticated?(:activation, params[:id])
