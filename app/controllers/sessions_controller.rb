@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
           sign_in teacher
           params[:session][:remember_me] == '1' ? remember(teacher) : forget(teacher)
           redirect_back_or teacher
-          flash[:success] = "Welcome back to the CaffeineJag Esl App!"
+          # flash[:success] = "Welcome back to the CaffeineJag Esl App!"
       else
           message  = "Account not activated. "
           message += "Check your email for the activation link."

@@ -10,7 +10,7 @@ Teacher.create!(name:  "Sample Teacher",
              email: "sample@email.com",
              password:              "tictactoe",
              password_confirmation: "tictactoe",
-             admin: true,
+             admin:     true,
              activated: true,
              activated_at: Time.zone.now)
 
