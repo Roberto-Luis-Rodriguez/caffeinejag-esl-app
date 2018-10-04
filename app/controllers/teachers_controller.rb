@@ -34,7 +34,6 @@ class TeachersController < ApplicationController
  def update
    @teacher = Teacher.find(params[:id])
    if @teacher.update_attributes(teacher_params)
-     # Handle a successful update.
      flash[:success] = "Profile updated"
      redirect_to @teacher
    else
@@ -57,7 +56,6 @@ private
 
    # Before filters
 
-   # Confirms a Signed-in teacher.
    def signed_in_teacher
      unless signed_in?
        store_location
@@ -66,13 +64,11 @@ private
      end
    end
 
-   # Confirms the correct teacher.
    def correct_teacher
      @teacher = Teacher.find(params[:id])
      redirect_to(root_url) unless current_teacher?(@teacher)
    end
 
-  # Confirms an admin teacher.
    def admin_teacher
      redirect_to(root_url) unless current_teacher.admin?
    end
