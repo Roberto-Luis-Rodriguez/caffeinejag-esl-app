@@ -1,0 +1,4 @@
+<%= link_to gravatar_for(current_teacher, size: 50), current_teacher %>
+<h1><%= current_teacher.name %></h1>
+<span><%= link_to "view my profile", current_teacher %></span>
+<span><%= pluralize(current_teacher.lessonplans.count, "lessonplan") %></span>

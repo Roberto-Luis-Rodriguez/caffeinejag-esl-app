@@ -1,4 +1,24 @@
 <body class="body">
+
+  <% if signed_in? %>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="teacher_info">
+          <%= render 'shared/teacher_info' %>
+        </section>
+        <section class="lessonplan_form">
+          <%= render 'shared/lessonplan_form' %>
+        </section>
+      </aside>
+
+      <div class="col-md-8">
+         <h3>Lessonplan Feed</h3>
+         <%= render 'shared/feed' %>
+       </div>
+
+    </div>
+  <% else %>
+
   <div class="center jumbotron">
     <h2>
       This is the link to
@@ -7,4 +27,7 @@
       <%= link_to image_tag"20150618_163553-resized.jpg"%>
     </h2>
   </div>
+
+<% end %>
+
 </body>

@@ -1,0 +1,14 @@
+<li id="lessonplan-<%= lessonplan.id %>">
+  <%= link_to gravatar_for(lessonplan.teacher, size: 50), lessonplan.teacher %>
+  <span class="teacher"><%= link_to lessonplan.teacher.name, lessonplan.teacher %></span>
+  <span class="attachment"><%= lessonplan.attachment %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(lessonplan.created_at) %> ago.
+
+    <% if current_teacher?(lessonplan.teacher) %>
+      <%= link_to "delete", lessonplan, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+  <% end %>
+
+  </span>
+</li>

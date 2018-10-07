@@ -1,4 +1,7 @@
 class Teacher < ApplicationRecord
+    has_many :lessonplans
+    default_scope -> { order(created_at: :desc) }
+    mount_uploader :picture, PictureUploader
     attr_accessor :remember_token, :activation_token, :reset_token
     before_save   :downcase_email
     before_create :create_activation_digest
@@ -33,7 +36,6 @@ class Teacher < ApplicationRecord
     end
 
 
-    # Returns true if the given token matches the digest.
     def authenticated?(attribute, token)
       digest = send("#{attribute}_digest")
       return false if digest.nil?
@@ -67,6 +69,10 @@ class Teacher < ApplicationRecord
 
     def password_reset_expired?
       reset_sent_at < 2.hours.ago
+    end
+
+    def feed
+      Lessonplan.where("teacher_id = ?", id)
     end
 
     private

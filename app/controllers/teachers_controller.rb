@@ -10,6 +10,7 @@ class TeachersController < ApplicationController
   def show
     @teacher = Teacher.find(params[:id])
     redirect_to root_url and return unless true
+    @lessonplans = @teacher.lessonplans.paginate(page: params[:page])
   end
 
   def new
@@ -55,14 +56,6 @@ private
    end
 
    # Before filters
-
-   def signed_in_teacher
-     unless signed_in?
-       store_location
-       flash[:danger] = "Please sign in."
-       redirect_to sign_in_url
-     end
-   end
 
    def correct_teacher
      @teacher = Teacher.find(params[:id])
