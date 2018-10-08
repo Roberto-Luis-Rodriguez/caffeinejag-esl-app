@@ -27,6 +27,7 @@ gem 'rmagick'
 gem 'carrierwave-video'
 gem 'carrierwave-video-thumbnailer'
 gem 'carrierwave-ffmpeg'
+gem "figaro"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
