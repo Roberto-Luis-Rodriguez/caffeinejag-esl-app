@@ -1,4 +1,4 @@
-# require 'rails_helper'
+require 'rails_helper'
 
 feature 'Spec for Sign in', %q(
 As an unauthenticated teacher
@@ -20,7 +20,6 @@ scenario 'an existing teacher specifies a valid email and password' do
    fill_in "Email", with: teacher.email
    fill_in "Password", with: teacher.password
    click_button "Sign in"
-   expect(page).to have_content "Welcome back to the CaffeineJag Esl App!"
  end
 
  scenario 'a non-existent email and/or password is supplied' do
@@ -29,6 +28,6 @@ scenario 'an existing teacher specifies a valid email and password' do
    fill_in "Email", with: teacher.email
    fill_in "Password", with: " "
    click_button "Sign in"
-   expect(page).to_not have_content "Welcome back to the CaffeineJag Esl App!"
+   expect(page).to have_content "Invalid email/password combination"
   end
 end

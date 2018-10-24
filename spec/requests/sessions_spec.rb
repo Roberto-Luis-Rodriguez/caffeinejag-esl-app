@@ -14,5 +14,4 @@
 #     get authenticated_root_path
 #     expect(controller.current_teacher).to be_nil
 #   end
-#
 # end

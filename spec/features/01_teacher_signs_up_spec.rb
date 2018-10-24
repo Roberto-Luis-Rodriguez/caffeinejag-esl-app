@@ -21,7 +21,7 @@ scenario "teacher successfully creates an account" do
 	fill_in 'teacher_password', :with => "password"
 	fill_in 'teacher_password_confirmation', :with => "password"
 	click_button 'Sign up'
-	expect(page).to have_content "Welcome to the CaffeineJag Esl App!"
+	expect(page).to have_content "Please check your email to activate your account."
   end
 
   scenario "teacher unsuccessfully creates an account" do
@@ -33,7 +33,7 @@ scenario "teacher successfully creates an account" do
   	fill_in 'teacher_password', :with => "password"
   	fill_in 'teacher_password_confirmation', :with => "password"
   	click_button 'Sign up'
-  	expect(page).to_not have_content "Welcome to the CaffeineJag Esl App!"
+  	expect(page).to_not have_content "Please check your email to activate your account."
     expect(page).to have_content('Name can\'t be blank')
     end
 end

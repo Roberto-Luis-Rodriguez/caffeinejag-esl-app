@@ -40,8 +40,6 @@ group :development, :test do
   gem 'sqlite3', '1.3.13'
 end
 
-
-
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -56,6 +54,8 @@ group :test do
   gem 'minitest-reporters',       '1.1.14'
   gem 'guard',                    '2.14.1'
   gem 'guard-minitest',           '2.4.6'
+  gem 'cucumber-rails', '1.4.0', :require => false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
 group :production do
