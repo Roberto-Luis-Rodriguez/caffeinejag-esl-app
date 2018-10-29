@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'static_pages#home'
   get '/sign_up', to: 'teachers#new'
   post '/sign_up',  to: 'teachers#create'

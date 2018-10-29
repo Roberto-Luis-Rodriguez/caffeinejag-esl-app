@@ -33,7 +33,8 @@ config.after :each do
   Warden.test_reset!
 end
 config.include Devise::Test::IntegrationHelpers, type: :request
-config.include RequestSpecHelper, type: :request
+# config.include RequestSpecHelper, type: :request
+# config.include Features::SessionHelpers, type: :feature
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

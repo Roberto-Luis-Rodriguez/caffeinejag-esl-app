@@ -42,7 +42,7 @@ end
     cookies.delete(:remember_token)
   end
 
-  # Logs out the current user.
+  # Logs out the current teacher.
   def sign_out
     forget(current_teacher)
     session.delete(:teacher_id)
